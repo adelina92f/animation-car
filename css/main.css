@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.wrapper{
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.playground{
+    position: relative;
+    background: #ccc;
+    border: 2px dashed #666;
+    width: 100%;
+    padding: 50%;
+}
+
+.car{
+    width: 60px;
+    height: 120px;
+
+    position: absolute;
+    background-color: darkblue;
+
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+
+    transition: bottom 3s ease-in;
+}
+
+    .playground:hover .car{
+        bottom: calc(100% -  120px);
+    }
+
+.red-car{
+    width: 120px;
+    height: 60px;
+    background-color: red; 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.car-2{ 
+    width: 120px;
+    height: 60px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    0%   {
+        top: 0;
+        left: 0;
+    }
+
+    24%{
+        top: 0;
+        left: calc(100% - 120px);  
+         width: 120px;
+        height: 60px; 
+    }
+
+    25% {
+        width: 60px;
+        height: 120px;
+        left: calc(100% - 60px);
+    }
+    49%{
+        top:calc(800px-60px);
+        left: calc(100%-60px);
+        width: 60px;
+        height: 120px;
+    }
+    50%  {
+        
+        top:680px;
+        left:740px; 
+    }
+    57%{
+        width: 120px;
+        height: 60px;
+        top: 740px;
+        left:calc(740px-60px);
+    }
+
+    74%{
+        top:680px;
+         left:0;
+         width: 60px;
+         height: 120px;
+    }
+    75%  
+    {
+         top:calc(800-120px);
+         left: 0;
+         width: 60px;
+        height: 120px;
+        }
+    100% {
+        top:0px;
+        left:0px; 
+    }
+   
+}
